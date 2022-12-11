@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block body %}
+    <h1>Register</h1>
+    <form action="/users/register" method="POST">
+        <div class="form-group">
+            <label for="name">Name :</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age :</label>
+            <input type="text" name="age" id="age" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="batch">Batch :</label>
+            <select name="batch" id="batch" class="form-control" required>
+                <option value="6 AM - 7 AM">6 AM - 7 AM</option>
+                <option value="7 AM - 8 AM">7 AM - 8 AM</option>
+                <option value="8 AM - 9 AM">8 AM - 9 AM</option>
+                <option value="5 PM - 6 PM">5 PM - 6 PM</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="payment">Have you completed payment of 500 Rs.</label>
+            <input type="checkbox" name="payment" id="payment"> Yes
+        </div>
+        <input type="submit" value="Register" role="button" class="btn btn-success btn-large">
+    </form>
+{% endblock %}

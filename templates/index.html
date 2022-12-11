@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+    <h1>Student List</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Batch</th>
+                <th scope="col">Joining Date</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stud in data %}
+            <tr>
+                <th scope="row">{{stud.id}}</th>
+                <td>{{stud.name}}</td>
+                <td>{{stud.age}}</td>
+                <td>{{stud.batch}}</td>
+                <td>{{stud.joining_date}}</td>
+                <td><a href="/users/edit/{{stud.id}}" role="button" class="btn btn-warning">Edit</a></td>
+                <td><a href="/users/delete/{{stud.id}}" role="button" class="btn btn-info">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/users/register" role="button" class="btn btn-success btn-large">Register Here...</a>
+{% endblock %}
